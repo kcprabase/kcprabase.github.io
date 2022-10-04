@@ -27,3 +27,23 @@ strong{
 .happyImg, .sadImg{
     height: 100px;
 }
+
+a:link {
+    text-decoration: none;
+    color:red;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color:green;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: hotpink;
+  }
+  
+  a:active {
+    text-decoration: underline;
+    color: blue;
+  }
