@@ -1,0 +1,25 @@
+body{
+    background-color:azure;
+    margin: 50px;
+}
+
+h1{
+    color:burlywood;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 50px;
+    font-weight: 500;
+    font-style: oblique;
+}
+
+h3{
+    color:lightseagreen
+}
+
+p.description{
+    font-family: cursive;
+    font-size: 20px;
+}
+
+strong{
+    color:steelblue;
+}
