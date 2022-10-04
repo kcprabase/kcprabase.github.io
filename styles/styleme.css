@@ -23,3 +23,7 @@ p.description{
 strong{
     color:steelblue;
 }
+
+.happyImg, .sadImg{
+    height: 100px;
+}
