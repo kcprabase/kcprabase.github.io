@@ -7,7 +7,6 @@ body{
 
 .heading{
     color: #A4A400;
-    background-color: #F0F0F0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-decoration: underline;
 }
@@ -16,6 +15,10 @@ h1.heading{
     text-align: center;
     font-size: 22pt;
     font-weight: bold;
+}
+
+.heading>span{
+    background-color: #F0F0F0;
 }
 
 h2.heading{
