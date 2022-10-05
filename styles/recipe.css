@@ -30,5 +30,17 @@ a{
 }
 
 .line-height-small{
-    line-height:1.1;
+    line-height:0.1;
+}
+
+.major-step,.emphasis{
+    font-weight: bold;
+}
+
+
+
+.comment{
+    background-color: #FFFFA8;
+    font-style: italic;
+    margin-left: 50px;
 }
