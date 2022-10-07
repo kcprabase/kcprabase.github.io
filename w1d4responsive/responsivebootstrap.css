@@ -1,0 +1,51 @@
+
+  .header{
+background-color: lightskyblue;
+padding-top: 20px;
+padding-bottom: 20px;
+margin:0;
+}
+.menulist{
+/* display:flex; */
+background-color:rgb(30, 61, 61);
+color: white;
+}
+.menu{
+height: 50px;
+padding: 15px;
+}
+.column{
+padding-left: 10px;
+padding-top: 10px;
+height: 250px;
+}
+
+.column:nth-child(1)
+{
+background-color: grey;
+}
+
+.column:nth-child(2)
+{
+background-color: rgb(167, 166, 166);
+float: right;
+}
+
+.column:nth-child(3)
+{
+background-color: rgb(192, 190, 190);
+}
+
+.footer{
+background-color:rgb(30, 61, 61);
+color: white;
+padding: 20px;
+}
+
+@media (max-width: 600px) {
+    .column:nth-child(2)
+{
+order:3;
+}
+
+}

@@ -3,41 +3,49 @@
 
 <head>
     <title>Responsive Design Exercise</title>
-    <link href="./responsive.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./responsivebootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+   
+    </style>
+  </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-           <h1>Header</h1>
+    <div>
+        <div class="row">
+           <h1 class="header text-center">Header</h1>
         </div>
-        <div class="menulist">
-            <div class="menu">
+        <div class="menulist row">
+            <div class="menu col-xs-2">
                 Menu1
             </div>
-            <div class="menu">
+            <div class="menu col-xs-2">
                 Menu2
             </div>
-            <div class="menu">
+            <div class="menu col-xs-2">
                 Menu3
             </div>
         </div>
-        <div class="columnlist">
-            <div class="column">
+        <div class="columnlist row">
+            <div class="column col-md-4 col-xs-6">
                 Column1
             </div>
-            <div class="column">
+            <div class="column col-md-4 col-xs-6">
                 Column3
             </div>
-            <div class="column">
+            <div class="column col-md-4 col-xs-12">
                 Column2
             </div>
         </div>
-        <div class="footer">
+        <div class="footer text-center">
             Footer
         </div>
     </div>
 </body>
+
 
 </html>
