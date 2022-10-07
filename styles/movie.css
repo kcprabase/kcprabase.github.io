@@ -103,10 +103,15 @@ padding-right: 5px;
 .reviewer{
 font-style: italic;
 }
+.reviewer>span{
+    /* clear: both; */
+    display: inline-block;
+    width: 100%;
+}
 
 .reviewer>img{
     padding-right: 5px;
-    vertical-align:top;
+    float:left;
 }
 
 .pagefooter{
@@ -126,3 +131,4 @@ font-style: italic;
 .validator img{
     opacity: 50%;
 }
+
