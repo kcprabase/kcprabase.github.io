@@ -75,7 +75,7 @@
                 return w.length > i;
             });
         }
-        console.log("Expected output of filterLongWords(['prabesh','test','elephant','international','hi', 'one'], 4) is ['prabesh','elephant','international']  " + myFunctionTest(['prabesh', 'elephant', 'international'], filterLongWords(['prabesh', 'test', 'elephant', 'international', 'hi', 'one'], 4)));
+        console.log("Expected output of filterLongWords(['prabesh','test','elephant','international','hi', 'one'], 4) is ['prabesh','elephant','international']  " + myFunctionTestForArray(['prabesh', 'elephant', 'international'], filterLongWords(['prabesh', 'test', 'elephant', 'international', 'hi', 'one'], 4)));
 
         console.log("Updated code on jsfiddle");
         const a = [1, 3, 5, 3, 3];
@@ -103,3 +103,22 @@
                 return "TEST FAILED.  Expected " + expected + " found " + found;
             }
         }
+
+        function myFunctionTestForArray(expected, found) {
+            if (arraysEqual(expected, found)) {
+                return "TEST SUCCEEDED";
+            } else {
+                return "TEST FAILED.  Expected " + expected + " found " + found;
+            }
+        } 
+
+        function arraysEqual(a, b) {
+            if (a === b) return true;
+            if (a == null || b == null) return false;
+            if (a.length !== b.length) return false;
+          
+            for (var i = 0; i < a.length; ++i) {
+              if (a[i] !== b[i]) return false;
+            }
+            return true;
+          }
