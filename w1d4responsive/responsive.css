@@ -3,7 +3,14 @@ body{
     font-family: sans-serif;
 }
 .container{
-    /* display: flex; */
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto ;
+    grid-template-areas: 
+        'header'
+        'menu'
+        'main'
+        'footer';    
 }
 
 .header{
@@ -13,6 +20,7 @@ body{
     vertical-align:bottom;  
     padding-top: 20px;
     padding-bottom: 20px;
+    grid-area: header;
 }
 
 .header>h1{
@@ -24,6 +32,7 @@ body{
     background-color:rgb(30, 61, 61);
     color: white;
     height: 50px;
+    grid-area: menu;
 }
 
 .menu{
@@ -35,6 +44,7 @@ body{
     display: flex;
     flex-wrap:wrap;
     justify-content:space-between;
+    grid-area: main;
 }
 
 .column{
@@ -51,20 +61,7 @@ body{
 {
     order:3;
 }
-    /* .column:nth-child(1) */
-/* {
-    flex: 30%;
-}
-
-.column:nth-child(2)
-{
-    flex: 40%;
-}
-
-.column:nth-child(3)
-{
-    flex:30%
-} */
+   
 }
 
 .column:nth-child(1)
@@ -90,5 +87,6 @@ body{
     color: white;
     padding: 20px;
     text-align: center;
+    grid-area: footer;
 }
 
