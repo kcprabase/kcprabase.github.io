@@ -1,16 +1,16 @@
 window.onload = function () {
     "use strict";
-    // put all of your code here
     let textArea = document.getElementById("text-area");
     let stopBtn = document.getElementById("stop");
     let currentAnimation = ANIMATIONS["blank"];
     let fontSizeDropdown = document.getElementById("fontsize");
+    let animationSelect = document.getElementById("animation");
     let interval;
     let delay = 250;
     let frames;
     let fontSize;
-    udpateFontSize();
     let frameIndex = 0;
+    udpateFontSize();
 
 
     document.getElementById("start").onclick = function () {
@@ -26,10 +26,10 @@ window.onload = function () {
         frameIndex = 0;
     };
 
-    document.getElementById("animation").onchange = function () {
-        currentAnimation = ANIMATIONS[document.getElementById("animation").value];
+    animationSelect.onchange = function () {
+        currentAnimation = ANIMATIONS[animationSelect.value];
         textArea.value = currentAnimation;
-    }
+    };
 
     fontSizeDropdown.onchange = function () {
         udpateFontSize();
@@ -41,9 +41,10 @@ window.onload = function () {
         } else {
             delay = 250;
         }
-        if (interval)
+        if (interval){
             runAnimation();
-    })
+        }
+    });
 
     function setUpFrames() {
         currentAnimation = textArea.value;
@@ -52,16 +53,18 @@ window.onload = function () {
 
     function udpateFontSize() {
         fontSize = fontSizeDropdown.value;
-        textArea.style.fontSize = fontSize + 'px';
+        textArea.style.fontSize = `${fontSize}px`;
     }
 
     function runAnimation() {
-        if (interval)
+        if (interval){
             clearInterval(interval);
+        }
         interval = setInterval(function () {
             textArea.value = frames[frameIndex++];
-            if (frameIndex >= frames.length)
+            if (frameIndex >= frames.length){
                 frameIndex = 0;
+            }
         }, delay);
     }
-}
+};
