@@ -33,7 +33,7 @@ window.onload = function () {
 
     fontSizeDropdown.onchange = function () {
         udpateFontSize();
-    }
+    };
 
     document.getElementById("turbo").addEventListener('change', (event) => {
         if (event.currentTarget.checked) {
