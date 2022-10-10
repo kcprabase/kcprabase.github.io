@@ -17,13 +17,6 @@ window.onload = function () {
         stopBtn.disabled = false;
         frames = setUpFrames();
         runAnimation();
-        // if (interval)
-        //     clearInterval(interval);
-        // interval = setInterval(function () {
-        //     textArea.value = frames[frameIndex++];
-        //     if (frameIndex >= frames.length)
-        //         frameIndex = 0;
-        // }, delay);
     };
 
     stopBtn.onclick = function () {
