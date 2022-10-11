@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Web Form 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        .nav-item{
+            border-left: solid 1px black;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">MUM Golden Dome Market::: SRM System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Product</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Supplier</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+            <span class="mr-sm-2">Hello!</span>
+            <button class="btn btn-default my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    
+    <div class="container">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="productnum">Product Number</label>
+                    <input type="text" class="form-control" id="productnum">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="qtystock">Quantity in stock</label>
+                    <input type="number" class="form-control" id="qtystock" value="0">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="supplier">Supplier:</label>
+                    <select class="form-control">
+                        <option>Select a supplier</option>
+                        <option>Supplier one</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="unitprice">Unit price</label>
+                    <input type="number" class="form-control" id="unitprice" value="0.0">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="datesupplied">Date supplied</label>
+                    <input type="text" class="form-control" id="datesupplied" placeholder="yyyy-mm-dd">
+                    <small id="emailHelp" class="form-text text-muted">Enter a date.</small>
+                </div>
+            </div>
+            <div class="text-right">
+                <button type="button" class="btn btn-outline-secondary">Reset</button>
+                <button type="button" class="btn btn-outline-danger">Cancel</button>
+                <button type="button" class="btn btn-outline-info">Add Product</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>
