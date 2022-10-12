@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Prabesh WAP</title>
+    </head>
+
+    <body>
+        <pre>
+            Hello,
+
+It took me half an hour to complete this task. At first, I found it tricky to complete task 3 because I was getting an error. Turns out, I was using the function as an IIFE which was invoking the function immediately and not assigning anything to the make_adder variable. I removed it and then it worked just fine.
+
+I finished the other questions with relatively less difficulty.
+
+Prabesh
+
+
+
+//Q1. 
+const count = (function(){
+    let counter = 0;
+    return{
+        add: function(){
+            counter++;
+        },
+        reset: function(){
+            counter = 0;
+        }
+        }
+    })();
+
+
+
+
+
+//Q2.
+The variable "counter" is the free variable in the definition of the add() function in the code for question 1.
+Free variables: The variables that are neither passed as a parameter nor locally declared inside the function but are accessible to the function because of the scope is called free variable.
+
+
+
+//Q3.
+    const make_adder = function(addBy){
+    let counter = 0
+    return function(){
+        counter+=addBy;
+        return counter;
+        }
+    };
+
+
+
+//Q4
+Immediately Invoked Function Expression (IIFE). Using IIFE module pattern is that simple modification to javascript that can remove all the names from the global namespace.
+IIFE are functions that are immediately invoked and the variables and methods inside IIFE are segregated from global namespace.
+
+
+
+//Q5
+    const Employee = (function(){
+        let name;
+        let age;
+        let salary;
+        
+        function getName(){
+            return name;
+        }
+        function getAge(){
+            return age;
+        }
+        function getSalary(){
+            return salary;
+        }
+        function setName(n){
+            name =  n;
+        }
+        function setAge(a){
+            age =  a;
+        }
+        function setSalary(s){
+            salary =  s;
+        }
+        function increaseSalary(percentage){
+            setSalary(getSalary()+percentage/100*getSalary());
+        }
+        function incrementAge(){
+            setAge(getAge()++);
+        }
+        
+        return {
+            setName : setName,
+            setAge : setAge,
+            setSalary : setSalary,
+            increaseSalary : increaseSalary,
+            incrementAge : incrementAge
+        };        
+    })();
+
+
+
+//Q6.
+    //Extension for Address
+    Employee.address = undefined;
+    Employee.setAddress = function(address){
+        Employee.address = address;
+    }
+    
+    Employee.getAddress = function(){
+        return Employee.address;
+    }
+    
+        </pre>
+    </body>
+</html>

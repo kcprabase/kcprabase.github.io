@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>W2D2</title>
+    </head>
+
+    <body>
+        <pre>
+            
+Q.1
+-------c(8,9,10)
+undefined //function c is called. Passed params care c(8,9,10). Inside function c there is a variable defined in line15 in function c. Its declaration is hoisted at top. So when x is logged in console at line 5, it prints undefined.
+8 //here a prints "8". a is argument of function c here and its value is passed as 8.
+--------f(8,9,10)
+8 //function f inside function c is called. passed params are for f(a,b,c) are f(8,9,10). In f, value of a is assinged to b. So, in line 9, b prints "8"
+9 //After f execution is finished, b is printed as "9" in line 14. It is because, value of b is passed as 9 in function c as c(8,9,10)
+10 // After execution of c, b is printed as "10" in line 18. b is a global variable with value 10.
+1 // Finally, x is printed as "1". Its value is assigned as 1 globally in the first line of code and its not changed after that globally.
+
+
+
+
+Q2.
+Global Scope: The scope of variables or functions that are declared and defined outside a function is called global scope.
+Variables in the global scope can be accessed from anywhere.
+
+Local Scope: The scope of variables or functions declared inside a function is called a local scope.
+Variables in the local scope can only be accessed from inside that function.
+
+
+
+Q3. 
+a. no. //Statements in ScopeA do not have access to variables defined in scope B and Scope C. It is because variables defined in B and C are bounded inside the function scope of functions xFunc and yFunc.
+b. yes. //Statements in B have access to variables defined in scope A. It is because variables in scope A are defined outside any function. So they have a global scope. Also, Scope B is inside scope A.
+c. no.  //Statements in B do not have access to variables defined in scope C. It is because yFunc is defined function xFunc. That means any variables defined in yFunc or Scope C is bounded inside the function scope of yFunc.
+d. yes. //Statements in C have access to variables defined in scope A. It is because variables in scope A are defined outside any function. So they have a global scope. Also, Scope C is inside Scope A overall.
+e. yes. //Statements in C have access to variables defined in scope B. It is because yFunc itself is inside Scope B. So any variables in Scope B are siblings to yFunc whose scope is Scope C.
+
+Q4. 
+81   //x is a global variable here with value 9. myFunction is just squaring value of x. So in line 5, it prints "81" to the console.
+25   //after myFunction is executed inside console.log in line 5, value of x is changed to 5 in line 6. So, it prints "25" when myFunction is called inside console.log in line 7.
+
+
+Q5.
+10   //There is variable foo inside if block in function bar(). So, its hoisted to top of the function bar(). At that point, value of foo is undefined when bar is executed. So, code goes inside if block where value of foo is set to 10. So it alerts "10" when line 6 is executed.
+        </pre>
+    </body>
+</html>
