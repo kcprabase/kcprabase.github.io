@@ -1,4 +1,9 @@
 $(() => {
+    $("div").click((e) => {
+        e.currentTarget.remove();
+        // console.log(e);
+        // console.log($(e));
+    });
     setInterval(() => {
         $("div").css("width", (idx, old) => {
             return parseInt(old) + 10 + "px";
