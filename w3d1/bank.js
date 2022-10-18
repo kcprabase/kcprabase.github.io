@@ -26,4 +26,10 @@ class Bank {
             report += x.toString() + '\n';
         });
     }
+
+    endOfMonth() {
+        this._accountList.forEach(a => {
+            a.endOfMonth();
+        });
+    }
 }

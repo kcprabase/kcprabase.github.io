@@ -28,4 +28,11 @@ class CheckingAccount extends Account {
     toString() {
         return "Account :" + this.getNumber() + ", Balance :" + this.getBalance() + ", OverDraft Limit :" + this._odLimit;
     }
+
+    endOfMonth() {
+        let balance = this.getBalance();
+        if (balance < 0) {
+            return `Warning, low balance Checking Account ${this.getNumber()}: balance: ${balance} overdraft limit: ${this._odLimit}`;
+        }
+    }
 }

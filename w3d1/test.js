@@ -159,8 +159,8 @@ describe("CheckingAccount: toString()", function () {
 });
 
 
-describe("Bank: toString()", function () {
-    let ac = new CheckingAccount("12345");
+describe("Bank", function () {
+    let bank = new Bank();
     ac.deposit(3000);
     it("Should return test: 'Account :12345, Balance :3000, OverDraft Limit :1000'",
         function () {
