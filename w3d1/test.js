@@ -104,8 +104,6 @@ describe("SavingsAccount: toString()", function () {
         });
 });
 
-//--------------------------------------
-
 
 describe("CheckingAccount: getOdLimit() - default value", function () {
     let ac = new CheckingAccount("12345");
@@ -159,13 +157,13 @@ describe("CheckingAccount: toString()", function () {
 });
 
 
-describe("Bank", function () {
-    let bank = new Bank();
-    ac.deposit(3000);
-    it("Should return test: 'Account :12345, Balance :3000, OverDraft Limit :1000'",
-        function () {
-            assert.equal(ac.toString(), 'Account :12345, Balance :3000, OverDraft Limit :1000');
-        });
-});
+// describe("Bank", function () {
+//     let bank = new Bank();
+//     ac.deposit(3000);
+//     it("Should return test: 'Account :12345, Balance :3000, OverDraft Limit :1000'",
+//         function () {
+//             assert.equal(ac.toString(), 'Account :12345, Balance :3000, OverDraft Limit :1000');
+//         });
+// });
 
 
