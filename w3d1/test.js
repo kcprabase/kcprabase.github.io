@@ -157,13 +157,40 @@ describe("CheckingAccount: toString()", function () {
 });
 
 
+describe("Bank", function () {
+    let bank = new Bank();
+    bank.addAccount();
+    bank.addSavingsAccount(7.0);
+    bank.addCheckingAccount(2000);
+    it("accountReport(): should return string : 'Account 141252100: balance 0\nAccount :141252101, Balance :0, Interest Rate :7\nAccount :141252102, Balance :0, OverDraft Limit :2000\n'",
+        function () {
+            assert.equal(bank.accountReport(), 'Account 141252100: balance 0\nAccount :141252101, Balance :0, Interest Rate :7\nAccount :141252102, Balance :0, OverDraft Limit :2000\n');
+        });
+
+});
+
+describe("Bank after one account (141252100) is closed.", function () {
+    let bank = new Bank();
+    bank.addAccount();
+    bank.addSavingsAccount(7.0);
+    bank.addCheckingAccount(2000);
+    bank.closeAccount(141252103);
+    it("accountReport(): should return string : 'Account :141252104, Balance :0, Interest Rate :7\nAccount :141252105, Balance :0, OverDraft Limit :2000\n'",
+        function () {
+            assert.equal(bank.accountReport(), 'Account :141252104, Balance :0, Interest Rate :7\nAccount :141252105, Balance :0, OverDraft Limit :2000\n');
+        });
+});
+
 // describe("Bank", function () {
 //     let bank = new Bank();
-//     ac.deposit(3000);
-//     it("Should return test: 'Account :12345, Balance :3000, OverDraft Limit :1000'",
+//     bank.addAccount();
+//     bank.addSavingsAccount(7.0);    
+//     bank.addCheckingAccount(2000);
+//     it("endOfMonth(): should return string : ''",
 //         function () {
-//             assert.equal(ac.toString(), 'Account :12345, Balance :3000, OverDraft Limit :1000');
+//             assert.equal(bank.endOfMonth(), '');
 //         });
+
 // });
 
 
