@@ -1,40 +1,40 @@
 $(() => {
     let wallsTouched = false;
     let started = false;
-    let ended = false;
     let gameOn = false;
-    $('.boundary').mouseover(function () {
-        if (gameOn && started) wallsTouched = true;
-        // $('.boundary').addClass('youlose');
-        // alert("You Lose!");
+    $('.boundary').mouseenter(function () {
+        loser();
     });
 
-    $('#start').mouseenter(function () {
-        if (gameOn) started = true;
+    $('#start').mouseleave(function () {
+        if (gameOn) {
+            started = true;
+            setStat("Game on...");
+        }
     });
 
     $('#end').mouseenter(function () {
-        if (gameOn && started) ended = true;
-    });
-
-    $('#end').mouseleave(function () {
-        if (!gameOn) return;
-        if (started && ended) {
-            if (wallsTouched) {
-                $('.boundary').addClass('youlose');
-                setTimeout(alert, 5, "You Lose!");
-
-            } else {
-                alert("You Win!!!");
-            }
+        if (!gameOn || !started) return;
+        if (started) {
+            setStat("You Win!!!");
         }
         gameOn = false;
+        started = false;
     });
+
+    $('#maze').mouseleave(function () {
+        started = false;
+        console.log('mouse left maze');
+    });
+
 
     $(document).on('keypress', function (e) {
         if (e.key === 's') {
             reset();
         }
+    });
+    $('#start').click(function () {
+        reset();
     });
 
     function reset() {
@@ -43,5 +43,19 @@ $(() => {
         started = false;
         ended = false;
         gameOn = true;
+        setStat("Not started");
+    }
+
+    function setStat(stat) {
+        $('#stat').html(stat);
+    }
+
+    function loser() {
+        if (started) {
+            started = false;
+            gameOn = false;
+            $('.boundary').addClass('youlose');
+            setStat("You Lose!");
+        }
     }
 });
