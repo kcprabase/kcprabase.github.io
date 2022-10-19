@@ -9,7 +9,6 @@ $(() => {
     $('#start').mouseleave(function () {
         if (gameOn) {
             started = true;
-            setStat("Game on...");
         }
     });
 
@@ -31,10 +30,12 @@ $(() => {
     $(document).on('keypress', function (e) {
         if (e.key === 's') {
             reset();
+            setStat("Game on...");
         }
     });
     $('#start').click(function () {
         reset();
+        setStat("Game on...");
     });
 
     function reset() {
