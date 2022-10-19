@@ -1,4 +1,4 @@
-div {
+.circle {
     position: relative;
     top: 200px;
     left: 300px;
@@ -6,4 +6,10 @@ div {
     height: 50px;
     background-color: maroon;
     border-radius: 25px;
+}
+
+#form {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
 }
