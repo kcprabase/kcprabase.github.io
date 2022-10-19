@@ -1,5 +1,5 @@
 .circle {
-    position: relative;
+    position: absolute;
     top: 200px;
     left: 300px;
     width: 50px;

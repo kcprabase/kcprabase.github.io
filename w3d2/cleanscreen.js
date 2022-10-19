@@ -1,4 +1,5 @@
 let params = {};
+let circles = [];
 $(() => {
     $('#startBtn').click(e => {
         params = getFormData();
@@ -17,14 +18,21 @@ function getFormData() {
 }
 
 function addCircle() {
-    $('.circle-container').append($('<div>', {
-        'class': 'circle',
-        css: {
-            'width': params.width,
-            'height': params.width,
-            'border-radius': params.width / 2
-        }
-    }));
+    for (let i = 0; i < params.circleNumber; i++) {
+        circles.push($('<div>', {
+            'class': 'circle',
+            css: {
+                'top': getRandomNum(50, 500),
+                'left': getRandomNum(100, 1400),
+                'width': params.width,
+                'height': params.width,
+                'border-radius': params.width / 2,
+                'background-color': getRandomColor()
+            }
+        }));
+    }
+    // debugger;
+    $('.circle-container').append(circles);
 }
 
 function animate() {
@@ -39,6 +47,12 @@ function animate() {
         $(".circle").css("border-radius", (idx, old) => {
             return parseInt(old) + parseInt(params.growthAmount) / 2 + "px";
         });
+        $(".circle").css("top", (idx, old) => {
+            return parseInt(old) - parseInt(params.growthAmount) / 2 + "px";
+        });
+        $(".circle").css("left", (idx, old) => {
+            return parseInt(old) - parseInt(params.growthAmount) / 2 + "px";
+        });
     }, params.growthRate);
 }
 
@@ -46,4 +60,12 @@ function addClickEvent() {
     $(".circle").click((e) => {
         e.currentTarget.remove();
     });
+}
+
+function getRandomNum(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+function getRandomColor() {
+    return '#' + Math.floor(Math.random() * 16777215).toString(16);
 }
