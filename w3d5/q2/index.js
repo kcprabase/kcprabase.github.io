@@ -5,6 +5,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.get('/', (req, res) => {
     let html = `
+        <!DOCTYPE html>
         <html lang="en">
             <head>
                 <title>Q2 form</title>
