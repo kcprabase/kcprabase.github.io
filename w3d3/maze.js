@@ -16,6 +16,7 @@ $(() => {
         if (!gameOn || !started) return;
         if (started) {
             setStat("You Win!!!");
+            $('.boundary').addClass('youwin');
         }
         gameOn = false;
         started = false;
@@ -39,6 +40,7 @@ $(() => {
     });
 
     function reset() {
+        $('.boundary').removeClass('youwin');
         $('.boundary').removeClass('youlose');
         wallsTouched = false;
         started = false;
