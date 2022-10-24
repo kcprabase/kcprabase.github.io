@@ -1,9 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
+const session = require('express-session');
 const path = require('path');
 const app = express();
-app.use(cookieParser());
+app.use(session({
+    resave: false,
+    saveUninitialized: false,
+    secret: 'aloevera'
+}));
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 const date = new Date();
 const hour = date.getHours();
@@ -38,16 +42,14 @@ app.get('/', (req, res) => {
 
 app.post('/result', urlencodedParser, (req, res) => {
     // res.send(`Welcome ${req.body.name}. Age: ${req.body.age}`);
-    if (req.body.name)
-        res.cookie('name', req.body.name);
-    if (res.body.age)
-        req.cookie('age', req.body.age);
-    res.redirect(303, `/output?name=${req.body.name}&age=${req.body.age}`);
+    if (req.body.name) req.session['name'] = req.body.name;
+    if (req.body.age) req.session['age'] = req.body.age;
+    res.redirect(303, `/output`);
 });
 
 app.get('/output', (req, res) => {
-    let name = req.query.name;
-    let age = req.query.age;
+    let name = req.session.name;
+    let age = req.session.age;
     if (!name) {
         name = "person";
     }

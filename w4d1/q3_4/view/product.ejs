@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="utf-8">
+    <title>Current time</title>
+</head>
+
+<body>
+    <a href="/">Home</a>
+    <h1>The Bakery Shop</h1>
+    <h2>
+        <%=product.name%>
+    </h2>
+    <dl>
+        <dt>Product</dt>
+        <dd>
+            <%=product.name%>
+        </dd>
+
+        <dt>Price</dt>
+        <dd>
+            $<%=product.price.toFixed(2)%>
+        </dd>
+    </dl>
+    <form action="/addToCart" method="post">
+        <input type="hidden" name="name" value="<%=product.name%>">
+        <input type="hidden" name="price" value="<%=product.price%>">
+        <button type="submit">Add to cart</button>
+    </form>
+
+</body>
+
+</html>
