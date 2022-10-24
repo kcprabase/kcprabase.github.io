@@ -75,7 +75,6 @@ app.get('/cart', (req, res) => {
 });
 
 app.post('/addToCart', urlencodedParser, (req, res) => {
-    console.log(req.body);
     updateShoppingCart(req.body);
     res.redirect(303, '/cart');
 });
