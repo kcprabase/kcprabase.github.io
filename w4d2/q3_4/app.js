@@ -11,6 +11,8 @@ app.use(session({
 }));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'view'));
+app.use(express.json());
+app.use('/js', express.static(path.join(__dirname, 'view', 'js')));
 
 const products = [
     {
@@ -68,12 +70,12 @@ const products = [
 
 
 app.get('/', (req, res) => {
-    res.render("shop", { products });
+    res.render("shop", { products, cartItemCount: getCartItemCount(req) });
 });
 
 app.get('/product', (req, res) => {
     const product = products.find(p => p.id == req.query.p)
-    res.render("product", { product });
+    res.render("product", { product, cartItemCount: getCartItemCount(req) });
 });
 
 app.get('/cart', (req, res) => {
@@ -82,7 +84,9 @@ app.get('/cart', (req, res) => {
 
 app.post('/addToCart', (req, res) => {
     updateShoppingCart(req);
-    res.redirect(303, '/cart');
+    res.json({ cartItemCount: getCartItemCount(req) });
+    res.status(200);
+    res.end();
 });
 
 function updateShoppingCart(req) {
@@ -98,6 +102,22 @@ function updateShoppingCart(req) {
             quantity: 1
         };
     }
+}
+
+function getCartItemCount(req) {
+    // console.log("cart", req.session.cart);
+    let count = 0;
+    // if (req.session.cart) {
+    //     console.log("cart has ", req.session.cart);
+        for (let item in req.session.cart) {
+
+            // console.log("item", item);
+            // console.log("count before", count);
+            count += req.session.cart[item].quantity;
+            // console.log("count after", count);
+        // }
+    }
+    return count;
 }
 
 app.listen(3000);

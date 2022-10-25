@@ -4,10 +4,17 @@
 <head>
     <meta charset="utf-8">
     <title>Current time</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/js/index.js"></script>
 </head>
 
 <body>
     <a href="/">Home</a>
+
+    <a href="/cart"> Cart (<span id="cartItemCount">
+            <%=cartItemCount%>
+        </span> items)</a>
     <h1>The Bakery Shop</h1>
     <h2>
         <%=product.name%>
@@ -23,9 +30,9 @@
             $<%=product.price.toFixed(2)%>
         </dd>
     </dl>
-    <form action="/addToCart" method="post">
-        <input type="hidden" name="name" value="<%=product.name%>">
-        <input type="hidden" name="price" value="<%=product.price%>">
+    <form id="cartForm" method="post">
+        <input id="productName" type="hidden" name="name" value="<%=product.name%>">
+        <input id="productPrice" type="hidden" name="price" value="<%=product.price%>">
         <button type="submit">Add to cart</button>
     </form>
 
