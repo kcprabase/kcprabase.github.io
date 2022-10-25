@@ -1,15 +1,22 @@
 const express = require('express');
+const session = require('express-session');
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
+app.use(session({
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 24 * 60 * 60 * 1000 },
+    secret: 'salty'
+}));
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'view'));
-const list = ['I like motorcycles.', 'Coffee is good.', 'So are momos.']
 
 
 app.get('/', (req, res) => {
-    res.render("index", {list});
+
+    res.render("index", { list: req.session.list ? req.session.list : [] });
 });
 
 app.get('/add', (req, res) => {
@@ -17,7 +24,8 @@ app.get('/add', (req, res) => {
 });
 
 app.post('/add', urlencodedParser, (req, res) => {
-    list.push(req.body.enterText);
+    if (!req.session.list) req.session.list = [];
+    req.session.list.push(req.body.enterText);
     res.redirect(303, '/');
 });
 

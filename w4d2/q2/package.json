@@ -1,16 +1,15 @@
 {
-  "name": "w4d1",
+  "name": "q2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "prabesh",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.8",
-    "express": "^4.18.2",
-    "express-session": "^1.17.3"
+    "express": "^4.18.2"
   }
 }
