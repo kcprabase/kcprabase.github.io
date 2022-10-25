@@ -10,7 +10,9 @@
     <a href="/">Home</a>
     <h1>The Bakery Shop</h1>
     <h2>
-        Shopping Cart
+        Shopping Cart <span id="itemCount">
+            (<%=cartItemCount%> items)
+        </span>
     </h2>
     <dl>
         <%for(const item in cart){%>

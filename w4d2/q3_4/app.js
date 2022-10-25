@@ -79,7 +79,7 @@ app.get('/product', (req, res) => {
 });
 
 app.get('/cart', (req, res) => {
-    res.render("shoppingCart", { cart: req.session.cart });
+    res.render("shoppingCart", { cart: req.session.cart, cartItemCount: getCartItemCount(req) });
 });
 
 app.post('/addToCart', (req, res) => {
@@ -105,17 +105,9 @@ function updateShoppingCart(req) {
 }
 
 function getCartItemCount(req) {
-    // console.log("cart", req.session.cart);
     let count = 0;
-    // if (req.session.cart) {
-    //     console.log("cart has ", req.session.cart);
-        for (let item in req.session.cart) {
-
-            // console.log("item", item);
-            // console.log("count before", count);
-            count += req.session.cart[item].quantity;
-            // console.log("count after", count);
-        // }
+    for (let item in req.session.cart) {
+        count += req.session.cart[item].quantity;
     }
     return count;
 }
