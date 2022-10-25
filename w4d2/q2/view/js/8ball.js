@@ -1,10 +1,11 @@
 $(() => {
     const clearMsg = () => $("#qin").val("");
+    $("#qin").focus(function () { $(this).select(); });
     const addedSuccess = (json) => {
         console.log(json);
         $("#qin").val(json.answer);
         $("#qin").focus();
-        setTimeout(clearMsg, 5000);
+        // setTimeout(clearMsg, 5000);
     }
     const noSuccess = () => {
         $("#qin").val("Unable to reach server");

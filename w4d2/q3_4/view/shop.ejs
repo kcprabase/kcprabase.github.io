@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="utf-8">
+    <title>Current time</title>
+</head>
+
+<body>
+    <h1>The Bakery Shop</h1>
+    <h2>Our products</h2>
+    <ul>
+        <%for(const item of products){%>
+            <li>
+                <a href="product?p=<%=item.id%>">
+                    <%=item.name%>
+                </a>
+            </li>
+            <%}%>
+    </ul>
+</body>
+
+</html>

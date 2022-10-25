@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="utf-8">
+    <title>Shopping Cart</title>
+</head>
+
+<body>
+    <a href="/">Home</a>
+    <h1>The Bakery Shop</h1>
+    <h2>
+        Shopping Cart
+    </h2>
+    <dl>
+        <%for(const item in cart){%>
+            <dt>
+                <%=cart[item].name%>
+            </dt>
+            <dd>
+                Qty: <%=cart[item].quantity%><br>
+                    Price: $<%=parseInt(cart[item].price).toFixed(2)%>
+            </dd>
+            <%}%>
+    </dl>
+
+
+</body>
+
+</html>
